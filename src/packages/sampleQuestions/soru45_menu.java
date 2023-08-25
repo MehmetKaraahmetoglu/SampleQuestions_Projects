@@ -8,8 +8,10 @@ public class soru45_menu {
 
     Scanner scanner = new Scanner(System.in);
 
-
     soru45_bakkalProjesi obj = new soru45_bakkalProjesi();
+
+
+
 
 
     void menu() {
