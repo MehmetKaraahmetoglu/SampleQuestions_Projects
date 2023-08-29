@@ -46,7 +46,7 @@ gösteren bir method yazınız. Ayrıca bakkalın hangi günler ortalamanın alt
         /*
         Burda const olusturdum cunku;
         birlikte kullanilacak parametreleri tek bir obje icinde toplamak istedim.
-        Daha sonra bu objeleri de liste adnda ki listemiz de depoladik.
+        Asagida da bu objeleri de liste adinda ki listemiz de depoladik.
          */
     }
 
@@ -72,6 +72,7 @@ gösteren bir method yazınız. Ayrıca bakkalın hangi günler ortalamanın alt
     //4. Adım : getOrtalamaKazanc() adlı method ile ortalama kazancı alın.
     static void getOrtalamaKazanc() {
 
+
         for (int i = 0; i < liste.size(); i++) {
             toplam += liste.get(i).gunlukKazanc;
             ortalamaKazanc =toplam/7;
@@ -85,6 +86,7 @@ gösteren bir method yazınız. Ayrıca bakkalın hangi günler ortalamanın alt
     //             for döngüsü ile tüm günleri ortalama kazanç ile karşılaştır ortalama
     //             kazançtan yüksekse o günleri return yap.
     void getOrtalamaninUstundekiKazancGunleri() {
+        //                                      { [p,k]   [s,k]   [c,k]   []   []   []   []   }
 
         for (int i = 0; i < liste.size(); i++) {
             if (liste.get(i).gunlukKazanc > ortalamaKazanc) {

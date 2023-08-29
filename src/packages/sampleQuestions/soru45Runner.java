@@ -6,6 +6,7 @@ public class soru45Runner {
         soru45_menu menu =new soru45_menu();
         menu.menu();
 
+
     }
 
 
