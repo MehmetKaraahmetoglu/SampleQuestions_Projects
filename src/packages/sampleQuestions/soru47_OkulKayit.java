@@ -1,6 +1,5 @@
 package packages.sampleQuestions;
 
-
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.Scanner;
@@ -12,8 +11,8 @@ public class soru47_OkulKayit {
     //    Öğretmen: Ad-Soyad,  kimlik No, yaş, bölüm, ve sicil No bilgileri içermelidir.
     //    Öğrenci:  Ad-Soyad,  kimlik No, yaş, numara, sınıf bilgileri içermelidir.
     static Scanner scanner = new Scanner(System.in);
-    ArrayList<ogretmen> ogretmen = new ArrayList<>();
-    ArrayList<ogrenci> ogrenci = new ArrayList<>();
+    ArrayList<soru47_Ogretmen> ogretmen = new ArrayList<>();
+    ArrayList<soru47_Ogrenci> ogrenci = new ArrayList<>();
 
 
     // O G R E T M E N    M E N U
@@ -61,7 +60,7 @@ public class soru47_OkulKayit {
             secim = scanner.next().toUpperCase().charAt(0);
 
 
-            ogretmen ogrt = new ogretmen(siraNo, ogrt_ad, ogrt_soyad, ogrt_kimlik_no, ogrt_yas, ogrt_bolum, ogrt_sicil_no);
+            soru47_Ogretmen ogrt = new soru47_Ogretmen(siraNo, ogrt_ad, ogrt_soyad, ogrt_kimlik_no, ogrt_yas, ogrt_bolum, ogrt_sicil_no);
             ogretmen.add(ogrt);
             siraNo++;
 
@@ -74,7 +73,8 @@ public class soru47_OkulKayit {
         System.out.println("Lütfen aradiginiz ogretmenin 4 haneli TC No bilgisini giriniz: ");
         String tcNo = scanner.next();
         boolean cikis = true;
-        for (ogretmen each : ogretmen
+
+        for (soru47_Ogretmen each : ogretmen
         ) {
             if (tcNo.equals(each.kimlikNo)) {
                 System.out.println("Aradiginiz Ogretmene ait bilgiler: " + each.toString());
@@ -90,7 +90,7 @@ public class soru47_OkulKayit {
 
     void ogrtListele() {
         System.out.println("Okula kayitli ogretmenler: ");
-        for (ogretmen each : ogretmen
+        for (soru47_Ogretmen each : ogretmen
         ) {
             System.out.println("Ogrt Sira No: " + each.siraNo +
                     "\tAdi: " + each.ad +
@@ -108,7 +108,7 @@ public class soru47_OkulKayit {
         System.out.println("Lütfen silmek istediginiz kisinin TC No'sunu yaziniz: ");
         String tcNo = scanner.next();
         boolean cikis = true;
-        for (ogretmen each : ogretmen
+        for (soru47_Ogretmen each : ogretmen
         ) {
             if (tcNo.equals(each.kimlikNo)) {
                 System.out.println("***Silme islemi basarili bir sekilde gerceklesmistir*** " + "\nSilinen kisiye ait bilgiler: " + each.toString());
@@ -155,7 +155,7 @@ public class soru47_OkulKayit {
             secim = scanner.next().toUpperCase().charAt(0);
 
 
-            ogrenci ogr = new ogrenci(siraNo, ogr_ad, ogr_soyad, ogr_kimlik_no, ogr_yas, ogr_numara, ogr_sinif);
+            soru47_Ogrenci ogr = new soru47_Ogrenci(siraNo, ogr_ad, ogr_soyad, ogr_kimlik_no, ogr_yas, ogr_numara, ogr_sinif);
             ogrenci.add(ogr);
             siraNo++;
 
@@ -168,7 +168,7 @@ public class soru47_OkulKayit {
         System.out.println("Lütfen aradiginiz ogrencinin 4 haneli TC No bilgisini giriniz: ");
         String tcNo = scanner.next();
         boolean cikis = true;
-        for (ogrenci each : ogrenci
+        for (soru47_Ogrenci each : ogrenci
         ) {
             if (tcNo.equals(each.kimlikNo)) {
                 System.out.println("Aradiginiz ogrenciye ait bilgiler: " + each.toString());
@@ -184,7 +184,7 @@ public class soru47_OkulKayit {
 
     void ogrListele() {
         System.out.println("Okula kayitli ogrenciler: ");
-        for (ogrenci each : ogrenci
+        for (soru47_Ogrenci each : ogrenci
         ) {
             System.out.println("Ogr Sira No: " + each.siraNo +
                     "\tAdi: " + each.ad +
@@ -202,7 +202,7 @@ public class soru47_OkulKayit {
         System.out.println("Lütfen silmek istediginiz ogrencinin TC No'sunu yaziniz: ");
         String tcNo = scanner.next();
         boolean cikis = true;
-        for (ogrenci each : ogrenci
+        for (soru47_Ogrenci each : ogrenci
         ) {
             if (tcNo.equals(each.kimlikNo)) {
                 System.out.println("***Silme islemi basarili bir sekilde gerceklesmistir*** " + "\nSilinen kisiye ait bilgiler: " + each.toString());
@@ -216,3 +216,4 @@ public class soru47_OkulKayit {
             System.out.println("Hatali TC No girdiniz ya da" + "\nSistemde bu TC'ye kayitli ogretmen bulunmamaktadir.");
     }
 }
+

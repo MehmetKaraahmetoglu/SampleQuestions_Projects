@@ -1,6 +1,6 @@
 package packages.sampleQuestions;
 
-public class soru47_Ogretmen {
+public class soru47_Ogretmen  {
     String ad;
     String soyad;
     String kimlikNo;
