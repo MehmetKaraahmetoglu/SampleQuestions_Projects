@@ -11,7 +11,7 @@ public class soru47_Menu_Runner extends soru47_OkulKayit {
     //     1- ÖĞRENCİ İŞLEMLERİ
     //     2- ÖĞRETMEN İŞLEMLERİ
     //     Q- ÇIKIŞ
-    void menu() {
+     void menu() {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("====================================\n" +
@@ -129,8 +129,8 @@ public class soru47_Menu_Runner extends soru47_OkulKayit {
     }
 
     public static void main(String[] args) {
-        soru47_Menu_Runner menu = new soru47_Menu_Runner();
-        menu.menu();
+       soru47_Menu_Runner obj = new soru47_Menu_Runner();
+       obj.menu();
 
     }
 }

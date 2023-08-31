@@ -52,7 +52,17 @@ public class soru46_Manav {
             System.out.println("Lütfen ürün adinin adini yaziniz:  \nSiparisiniz bittiginde CIKIS yaziniz. ");
             secim = scanner.next();
             if (secim.equalsIgnoreCase("cikis")) {
-                System.out.println("Verilen siparisler: " + tumSiparisler);
+                if (tumSiparisler.isEmpty())
+                    System.out.println("Henüz siparis vermediniz!");
+                else {
+
+                    for (int i = 0; i < tumSiparisler.size(); i++) {
+                        System.out.println("Ürün adi: " + tumSiparisler.get(i).urunAdi +
+                                "\nSiparis miktari: " + tumSiparisler.get(i).kg + " Kg");
+                        System.out.println("");
+                    }
+                }
+
 
             } else if (secim.equalsIgnoreCase("domates") ||
                     secim.equalsIgnoreCase("patates") ||

@@ -44,7 +44,7 @@ public class soru47_OkulKayit {
             String ogrt_bolum = scanner.next();
 
 
-            int basamakSayisiSicilNo = 0;
+
             String ogrt_sicil_no;
             do {
                 System.out.println("Lütfen ögretmenin 4 haneli SICIL NO bilgisini giriniz: ");
@@ -61,8 +61,9 @@ public class soru47_OkulKayit {
 
 
             soru47_Ogretmen ogrt = new soru47_Ogretmen(siraNo, ogrt_ad, ogrt_soyad, ogrt_kimlik_no, ogrt_yas, ogrt_bolum, ogrt_sicil_no);
-            ogretmen.add(ogrt);
             siraNo++;
+            ogretmen.add(ogrt);
+
 
         } while (secim != 'Q');
 
@@ -107,7 +108,7 @@ public class soru47_OkulKayit {
     void ogrtSilme() {
         System.out.println("Lütfen silmek istediginiz kisinin TC No'sunu yaziniz: ");
         String tcNo = scanner.next();
-        boolean cikis = true;
+
         for (soru47_Ogretmen each : ogretmen
         ) {
             if (tcNo.equals(each.kimlikNo)) {
@@ -156,8 +157,9 @@ public class soru47_OkulKayit {
 
 
             soru47_Ogrenci ogr = new soru47_Ogrenci(siraNo, ogr_ad, ogr_soyad, ogr_kimlik_no, ogr_yas, ogr_numara, ogr_sinif);
-            ogrenci.add(ogr);
             siraNo++;
+            ogrenci.add(ogr);
+
 
         } while (secim != 'Q');
 
