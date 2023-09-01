@@ -26,15 +26,29 @@ public class soru47_OkulKayit {
             String ogrt_soyad = scanner.next();
 
             String ogrt_kimlik_no;
-            do {
-                System.out.println("Lütfen 4 basamakli TC kimlik numarasini giriniz: ");
+
+            while (true) {
+                System.out.println("Lütfen 4 basamaklı TC kimlik numarasını giriniz: ");
                 ogrt_kimlik_no = scanner.next();
+
                 if (ogrt_kimlik_no.length() == 4) {
-                    break;
+                    boolean cikis1 = true;
+
+                    for (char karakter : ogrt_kimlik_no.toCharArray()) {
+                        if (!Character.isDigit(karakter)) {
+                            System.out.println("TC no rakamlardan oluşmalıdır.");
+                            cikis1 = false;
+                            break;
+                        }
+                    }
+
+                    if (cikis1) {
+                        break;
+                    }
                 } else {
-                    System.out.println("Hatali giris yaptiniz...");
+                    System.out.println("TC no 4 basamaklı olmalıdır...");
                 }
-            } while (ogrt_kimlik_no.length() != 4);
+            }
 
 
             System.out.println("Lütfen ögretmenin YAS bilgisini giriniz: ");
@@ -44,26 +58,37 @@ public class soru47_OkulKayit {
             String ogrt_bolum = scanner.next();
 
 
-
+            int basamakSayisiSicilNo = 0;
             String ogrt_sicil_no;
-            do {
+            while (true) {
                 System.out.println("Lütfen ögretmenin 4 haneli SICIL NO bilgisini giriniz: ");
                 ogrt_sicil_no = scanner.next();
-
                 if (ogrt_sicil_no.length() == 4) {
-                    break;
+                    boolean cikis1 = true;
+                    for (char karakter : ogrt_sicil_no.toCharArray()
+                    ) {
+                        if (!Character.isDigit(karakter)) {
+                            System.out.println("Sicil numarasi sadece rakamlardan olusmalidir...");
+                            cikis1 = false;
+                            break;
+                        }
+
+                    }
+                    if (cikis1) {
+                        break;
+
+                    }
                 } else {
-                    System.out.println("Hatali giris yaptiniz...");
+                    System.out.println("Sicil numarasi 4 basamakli olmalidir...");
                 }
-            } while (ogrt_sicil_no.length() != 4);
+            }
             System.out.println("Cikis yapmak icin Q ya basiniz, devam etmek icin herhangi bir harfe basabilirsiniz..");
             secim = scanner.next().toUpperCase().charAt(0);
 
 
-            soru47_Ogretmen ogrt = new soru47_Ogretmen(siraNo, ogrt_ad, ogrt_soyad, ogrt_kimlik_no, ogrt_yas, ogrt_bolum, ogrt_sicil_no);
-            siraNo++;
+           soru47_Ogretmen ogrt = new soru47_Ogretmen(siraNo, ogrt_ad, ogrt_soyad, ogrt_kimlik_no, ogrt_yas, ogrt_bolum, ogrt_sicil_no);
             ogretmen.add(ogrt);
-
+            siraNo++;
 
         } while (secim != 'Q');
 
@@ -74,7 +99,6 @@ public class soru47_OkulKayit {
         System.out.println("Lütfen aradiginiz ogretmenin 4 haneli TC No bilgisini giriniz: ");
         String tcNo = scanner.next();
         boolean cikis = true;
-
         for (soru47_Ogretmen each : ogretmen
         ) {
             if (tcNo.equals(each.kimlikNo)) {
@@ -108,7 +132,7 @@ public class soru47_OkulKayit {
     void ogrtSilme() {
         System.out.println("Lütfen silmek istediginiz kisinin TC No'sunu yaziniz: ");
         String tcNo = scanner.next();
-
+        boolean cikis = true;
         for (soru47_Ogretmen each : ogretmen
         ) {
             if (tcNo.equals(each.kimlikNo)) {
@@ -135,16 +159,30 @@ public class soru47_OkulKayit {
             String ogr_soyad = scanner.next();
 
             String ogr_kimlik_no;
-            do {
+            while (true){
                 System.out.println("Lütfen ögrencinin 4 haneli KIMLIK NO bilgisini giriniz: ");
                 ogr_kimlik_no = scanner.next();
+                if (ogr_kimlik_no.length() ==4){
+                    boolean cikis1=true;
 
-                if (ogr_kimlik_no.length() == 4) {
-                    break;
-                } else {
-                    System.out.println("Hatali giris yaptiniz...");
+                    for (char karakter:  ogr_kimlik_no.toCharArray()
+                    ) {
+                        if (!Character.isDigit(karakter)){
+                            System.out.println("TC no sadece rakamlardan olusmalidir.");
+                            cikis1=false;
+                            break;
+                        }
+
+                    }
+                    if (cikis1){
+                        break;
+                    }
+
+
+                }else {
+                    System.out.println("TC no 4 basamakli olmalidir");
                 }
-            } while (ogr_kimlik_no.length()!=4);
+            }
 
             System.out.println("Lütfen ögrencinin YAS bilgisini giriniz: ");
             int ogr_yas = scanner.nextInt();
@@ -157,9 +195,8 @@ public class soru47_OkulKayit {
 
 
             soru47_Ogrenci ogr = new soru47_Ogrenci(siraNo, ogr_ad, ogr_soyad, ogr_kimlik_no, ogr_yas, ogr_numara, ogr_sinif);
-            siraNo++;
             ogrenci.add(ogr);
-
+            siraNo++;
 
         } while (secim != 'Q');
 
@@ -218,4 +255,3 @@ public class soru47_OkulKayit {
             System.out.println("Hatali TC No girdiniz ya da" + "\nSistemde bu TC'ye kayitli ogretmen bulunmamaktadir.");
     }
 }
-
